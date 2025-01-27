@@ -39,7 +39,7 @@ mongoose
   .connect(process.env.DATA_BASE_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 10000, // تنظیم تایم‌اوت
+    connectTimeoutMS: 30000, // تنظیم تایم‌اوت
   })
   .then(() => console.log("Connected to MongoDB"))
   .catch(() => console.log("failed to connect"));
