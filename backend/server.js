@@ -17,7 +17,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve()
-
 app.use(express.json({limit:"10mb"}))
 app.use(cookieParser())
 
@@ -37,7 +36,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(process.env.DATA_BASE_URL)
+  .connect(process.env.DATA_BASE_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 10000, // تنظیم تایم‌اوت
+  })
   .then(() => console.log("Connected to MongoDB"))
   .catch(() => console.log("failed to connect"));
 
