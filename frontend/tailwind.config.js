@@ -1,9 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // مسیر فایل‌های React
-    "./public/index.html",       // اگر در HTML هم استفاده می‌کنید
-  ],
+export default {
+  content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
