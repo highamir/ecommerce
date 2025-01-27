@@ -36,11 +36,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(process.env.DATA_BASE_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    connectTimeoutMS: 30000, // تنظیم تایم‌اوت
-  })
+  .connect(process.env.DATA_BASE_URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch(() => console.log("failed to connect"));
 
